@@ -1,5 +1,10 @@
-# Create new empty component template
 cd src/components
+
+# Append export to src/components/index.ts
+touch index.ts
+echo "export { default as $1 } from \"./$1\";" >>index.ts
+
+# Create new empty component template
 mkdir $1
 cd $1
 
