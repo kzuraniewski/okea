@@ -1,14 +1,16 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { Header } from "..";
-import { Root } from "./Layout.style";
+import { Content } from "./Layout.style";
 
 const Layout = () => {
 	return (
-		<Root>
+		<>
 			<Header />
-			<Outlet />
-		</Root>
+			<Content>
+				<Outlet />
+			</Content>
+		</>
 	);
 };
 
