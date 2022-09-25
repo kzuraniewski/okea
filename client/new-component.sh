@@ -2,7 +2,10 @@ cd src/components
 
 # Append export to src/components/index.ts
 touch index.ts
-echo "export { default as $1 } from \"./$1\";" >>index.ts
+TEXT="
+export * from \"./$1\";
+export { default as $1 } from \"./$1\";"
+printf '%s\n' "$TEXT" >>index.ts
 
 # Create new empty component template
 mkdir $1
@@ -11,6 +14,8 @@ cd $1
 # index.ts
 touch index.ts
 TEXT="import $1 from \"./$1\";
+
+export * from \"$1.types.d\";
 export default $1;"
 printf '%s\n' "$TEXT" >>index.ts
 
