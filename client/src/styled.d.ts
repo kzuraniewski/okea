@@ -16,9 +16,12 @@ type Shadow = {
 	string: string;
 };
 
+type Breakpoint = "sm" | "md" | "lg" | "xl" | "xxl";
+
 declare module "styled-components" {
 	export interface DefaultTheme {
 		colors: Colors;
 		shadow: Shadow;
+		breakpoints: Record<Breakpoint, number>;
 	}
 }

@@ -15,7 +15,7 @@ cd $1
 touch index.ts
 TEXT="import $1 from \"./$1\";
 
-export * from \"$1.types.d\";
+export * from \"./$1.types.d\";
 export default $1;"
 printf '%s\n' "$TEXT" >>index.ts
 
