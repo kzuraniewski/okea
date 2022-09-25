@@ -5,12 +5,16 @@ import theme from "./theme";
 
 const Root = styled.div``;
 
-const App = () => {
+export type AppProps = {
+	children: React.ReactNode;
+};
+
+const App = ({ children }: AppProps) => {
 	return (
 		<>
 			<Reset />
 			<ThemeProvider theme={theme}>
-				<Root />
+				<Root>{children}</Root>
 			</ThemeProvider>
 		</>
 	);
