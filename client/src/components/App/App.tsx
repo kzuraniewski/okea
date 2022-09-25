@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
+import GlobalStyle from "./GlobalStyle";
 import Reset from "./reset";
 import theme from "./theme";
 
@@ -14,6 +15,7 @@ const App = ({ children }: AppProps) => {
 		<>
 			<Reset />
 			<ThemeProvider theme={theme}>
+				<GlobalStyle />
 				<Root>{children}</Root>
 			</ThemeProvider>
 		</>
